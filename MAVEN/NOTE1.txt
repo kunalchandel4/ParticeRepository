@@ -1,0 +1,117 @@
+Q1. When should one use Maven?
+
+ANS:- Maven is chiefly used for Java-based projects, helping to download dependencies, which
+
+ refers to the libraries or JAR files. The tool helps get the right JAR files for each project
+
+ as there may be different versions of separate packages. Maven is a powerful project 
+
+management tool that is based on POM (project object model). It is used for projects build, 
+
+dependency and documentation. It simplifies the build process like ANT. But it is too much 
+
+advanced than ANT.
+
+
+
+Q2. Explain the core concepts of Maven.
+
+ANS:-
+Maven Core Concepts
+Maven is based on the concept of project object model (POM) file. POM is an XML file which contains project resources like source code, test code and dependencies (external JARs) etc. The POM file should be in the project’s root directory.
+
+Maven Core Concepts:
+
+POM Files
+Build Life Cycles, Phases and Goals
+Dependencies and Repositories
+Build Plugins
+Build Profiles
+
+
+==============================================================================
+
+Q3. Explain about the basic properties of pom.xml file.
+
+ANS:-POM is an acronym for Project Object Model. The pom.xml file contains information of project and configuration information for the maven to build the project such as dependencies, build directory, source directory, test source directory, plugin, goals etc.
+
+Maven reads the pom.xml file, then executes the goal.
+
+
+project	
+It is the root element of pom.xml file.
+
+modelVersion	
+It is the sub element of project. It specifies the modelVersion. It should be set to 4.0.0.
+
+groupId	
+It is the sub element of project. It specifies the id for the project group.
+
+artifactId	
+It is the sub element of project. It specifies the id for the artifact (project). An artifact is something that is either produced or used by a project. Examples of artifacts produced by Maven for a project include: JARs, source and binary distributions, and WARs.
+
+
+version	
+It is the sub element of project. It specifies the version of the artifact under given group.
+
+
+
+==============================================================================
+
+Q4. What are the different phases of the default life cycle?
+
+ANS:-maven build life cycle:
+==================
+
+maven build life cycle contains diff phases:
+
+
+1. validate: - in this phase it will verify the project diectory structure is valid or not. and it has pom.xml file is there or not.
+
+2.compile: maven compiles all the source code of the project by downloading and adding requied jar files in the classpath.
+
+3.test-compile: if we have written any unit test cases those code will be compiled.
+
+4.test : maven will run all the test cases and it will show how many test cases are success and how many fails.
+
+5.package : maven will bundle our java code into a jar file inside 'target' folder.
+
+6.install : that jar file in step 5 will be stored in the localrepo.
+
+7.deploy : maven stores the application jar file to the central repo.
+
+**8.clean : here maven will delete and remove all the files that are generated in previous build. this phase is an isolated phase.
+
+
+=============================================================================
+
+Q5.What are the different types of Maven repositories?
+
+ANS:-Maven Repository
+
+A maven repository is a directory of packaged JAR file with pom.xml file. Maven searches for dependencies in the repositories. There are 3 types of maven repository:
+
+Local Repository
+Central Repository
+Remote Repository
+
+1) Maven Local Repository
+Maven local repository is located in your local system. It is created by the maven when you run any maven command.
+
+By default, maven local repository is %USER_HOME%/.m2 directory. For example: C:\Users\SSS IT\.m2.
+
+
+Update location of Local Repository
+We can change the location of maven local repository by changing the settings.xml file. It is located in MAVEN_HOME/conf/settings.xml, for example: E:\apache-maven-3.1.1\conf\settings.xml.
+
+
+
+2) Maven Central Repository
+Maven central repository is located on the web. It has been created by the apache maven community itself.
+
+The path of central repository is: http://repo1.maven.org/maven2/.
+
+The central repository contains a lot of common libraries that can be viewed by this url http://search.maven.org/#browse.
+
+3) Maven Remote Repository
+Maven remote repository is located on the web. Most of libraries can be missing from the central repository such as JBoss library etc, so we need to define remote repository in pom.xml file.
