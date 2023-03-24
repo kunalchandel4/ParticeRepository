@@ -115,3 +115,10 @@ The central repository contains a lot of common libraries that can be viewed by 
 
 3) Maven Remote Repository
 Maven remote repository is located on the web. Most of libraries can be missing from the central repository such as JBoss library etc, so we need to define remote repository in pom.xml file.
+
+
+===========================================================================
+
+Q:- What is build process in java ?
+
+ANS:- The "Build" is a process that covers all the steps required to create a "deliverable" of your software. In the Java world, this typically includes: Generating sources (sometimes). Compiling sources. Compiling test sources,A build is the process of converting source code files into standalone software artifact(s) that can be run on a computer, or the result of doing so.
