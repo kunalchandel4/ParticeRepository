@@ -46,3 +46,21 @@ frequently generated exceptions in java applications.
 
 - Multithreaded:- Java supports multithreading to enhance performance. by using
 this we can execute multiple functionalities simultaneously.
+
+
+## Java Edition (Java comes in the form of 3 editions)
+
+1. Java Standard Edition (JSE)/J2SE
+It is a specification from the sun-microsystem. The implementation of this J2SE specification is JDK s/w.This is the core Java platform, it is a specification, which contains the core libraries to develop standalone, networking, database, GUI, and multithreaded types of applications.
+In addition to the core API, the Java SE platform consists of a virtual machine, development tools, deployment technologies, and other class libraries and toolkits commonly used in Java applications.  
+(Java SE lets you develop and deploy Java applications on desktops and servers. Java SE and component technologies offer the rich user interface, performance, versatility, portability, and security that today's applications require.)
+
+2. Java Enterprise Edition (JEE)/J2EE
+The Java EE platform provides an API and runtime environment for developing and
+running large-scale, multi-tiered, scalable, reliable, and secure network applications.        
+(Java EE provides an API and runtime environment for developing and running large, multi-tiered, reliable, and secure enterprise applications that are portable and scalable and that integrate easily with legacy applications and data.)
+
+3. Java Micro Edition (JME)/J2ME
+It is a subset of Java SE, designed and used for microdevices and embedded development
+like mobile phones, sensors, micro-controller, TV set-top boxes, etc.                               
+ (Java ME Embedded is designed for resource-constrained devices like wireless modules for M2M, industrial control, smart-grid infrastructure, environmental sensors and tracking, and more.)
