@@ -1,0 +1,4 @@
+JDK or Java SDK
+Java Standard Edition comes in the form of Specification, and the implementation of this
+specification is the JDK software, also known as Java SDK (Java Standard
+Development Kit).
