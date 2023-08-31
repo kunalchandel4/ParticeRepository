@@ -1,0 +1,9 @@
+package com.micro.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.micro.entity.Hotel;
+
+public interface HotelRepo extends JpaRepository<Hotel, Integer> {
+
+}

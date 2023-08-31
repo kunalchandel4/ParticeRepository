@@ -1,0 +1,5 @@
+package com.micro.exception;
+
+public class ShoppingError {
+
+}
