@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Document("user_rating")
+@Document(collection = "user_rating")
 @Data
 public class Rating {
 
