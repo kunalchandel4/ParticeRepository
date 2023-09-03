@@ -1,5 +1,0 @@
-package com.micro.exception;
-
-public class UserException {
-
-}

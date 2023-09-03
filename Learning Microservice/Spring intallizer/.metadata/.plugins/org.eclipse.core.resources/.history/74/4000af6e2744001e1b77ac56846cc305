@@ -1,9 +1,0 @@
-package com.micro.service;
-
-import com.micro.entities.User;
-
-public interface UserService {
-
-	public User saveUser(User object);
-
-}

@@ -14,19 +14,19 @@ import com.micro.Entity.Rating;
 import com.micro.service.RatingService;
 
 @RestController
-@RequestMapping("/rating")
+@RequestMapping("/ratings")
 public class RatingController {
 
 	@Autowired
 	private RatingService ser;
 
-	@PostMapping("/create")
+	@PostMapping
 	public ResponseEntity<?> create(@RequestBody Rating rate) {
 
 		return new ResponseEntity<>(ser.createRating(rate), HttpStatus.OK);
 	}
 
-	@GetMapping("/getAll")
+	@GetMapping
 	public ResponseEntity<?> getALl() {
 
 		return new ResponseEntity<>(ser.getAll(), HttpStatus.OK);
