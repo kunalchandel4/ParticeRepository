@@ -17,7 +17,6 @@ import com.micro.entities.User;
 import com.micro.exception.UserException;
 import com.micro.service.UserService;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 
 @RestController
