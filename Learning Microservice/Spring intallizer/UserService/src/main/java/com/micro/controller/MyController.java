@@ -18,6 +18,7 @@ import com.micro.exception.UserException;
 import com.micro.service.UserService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 
 @RestController
 @RequestMapping("/user")
@@ -42,7 +43,8 @@ public class MyController {
 	}
 
 	@GetMapping("/{id}")
-	@CircuitBreaker(name = "ratingHotelBreaker",fallbackMethod = "ratingHotelfallbackMethod")
+//	@CircuitBreaker(name = "ratingHotelBreaker",fallbackMethod = "ratingHotelfallbackMethod")
+	@Retry(name = "ratingHotelRetry",fallbackMethod = "ratingHotelfallbackMethod")
 	public ResponseEntity<User> getUserById(@PathVariable String id) throws UserException {
 
 		User user = userService.getUser(id);
