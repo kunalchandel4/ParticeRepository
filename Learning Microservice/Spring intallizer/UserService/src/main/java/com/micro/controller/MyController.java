@@ -17,6 +17,8 @@ import com.micro.entities.User;
 import com.micro.exception.UserException;
 import com.micro.service.UserService;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @RestController
 @RequestMapping("/user")
 
@@ -40,9 +42,18 @@ public class MyController {
 	}
 
 	@GetMapping("/{id}")
+	@CircuitBreaker(name = "ratingHotelBreaker",fallbackMethod = "ratingHotelfallbackMethod")
 	public ResponseEntity<User> getUserById(@PathVariable String id) throws UserException {
 
 		User user = userService.getUser(id);
+		return new ResponseEntity<>(user, HttpStatus.OK);
+
+	}
+	
+	public ResponseEntity<User> ratingHotelfallbackMethod(String id, Exception ex)  {
+
+		User user = new User();
+		user.setAbout("Service is down baby");
 		return new ResponseEntity<>(user, HttpStatus.OK);
 
 	}
