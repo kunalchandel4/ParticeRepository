@@ -17,6 +17,7 @@ import com.micro.entities.User;
 import com.micro.exception.UserException;
 import com.micro.service.UserService;
 
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 
 @RestController
@@ -43,15 +44,18 @@ public class MyController {
 
 	@GetMapping("/{id}")
 //	@CircuitBreaker(name = "ratingHotelBreaker",fallbackMethod = "ratingHotelfallbackMethod")
-	@Retry(name = "ratingHotelRetry",fallbackMethod = "ratingHotelfallbackMethod")
+	// @Retry(name = "ratingHotelRetry",fallbackMethod =
+	// "ratingHotelfallbackMethod")
+
+	@RateLimiter(name = "ratingHotelLimiter", fallbackMethod = "ratingHotelfallbackMethod")
 	public ResponseEntity<User> getUserById(@PathVariable String id) throws UserException {
 
 		User user = userService.getUser(id);
 		return new ResponseEntity<>(user, HttpStatus.OK);
 
 	}
-	
-	public ResponseEntity<User> ratingHotelfallbackMethod(String id, Exception ex)  {
+
+	public ResponseEntity<User> ratingHotelfallbackMethod(String id, Exception ex) {
 
 		User user = new User();
 		user.setAbout("Service is down baby");
