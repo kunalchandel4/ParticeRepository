@@ -47,7 +47,7 @@ public class MyController {
 	// @Retry(name = "ratingHotelRetry",fallbackMethod =
 	// "ratingHotelfallbackMethod")
 
-	@RateLimiter(name = "ratingHotelLimiter", fallbackMethod = "ratingHotelfallbackMethod")
+	@RateLimiter(name = "userRateLimiter", fallbackMethod = "ratingHotelfallbackMethod")
 	public ResponseEntity<User> getUserById(@PathVariable String id) throws UserException {
 
 		User user = userService.getUser(id);
