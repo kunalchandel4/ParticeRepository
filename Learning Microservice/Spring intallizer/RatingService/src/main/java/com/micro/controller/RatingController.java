@@ -3,6 +3,7 @@ package com.micro.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,8 @@ public class RatingController {
 	@Autowired
 	private RatingService ser;
 
+	// create rating
+	@PreAuthorize("hasAuthority('Admin')")
 	@PostMapping
 	public ResponseEntity<?> create(@RequestBody Rating rate) {
 
@@ -32,6 +35,7 @@ public class RatingController {
 		return new ResponseEntity<>(ser.getAll(), HttpStatus.OK);
 	}
 
+	@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
 	@GetMapping("/user/{id}")
 	public ResponseEntity<?> getUserID(@PathVariable String id) {
 

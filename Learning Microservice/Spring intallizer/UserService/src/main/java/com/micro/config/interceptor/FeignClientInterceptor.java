@@ -1,6 +1,5 @@
 package com.micro.config.interceptor;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.client.OAuth2AuthorizeRequest;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
@@ -13,7 +12,7 @@ import feign.RequestTemplate;
 @Component
 public class FeignClientInterceptor implements RequestInterceptor {
 
-	@Autowired
+	
 	private OAuth2AuthorizedClientManager manager;
 
 	@Override
